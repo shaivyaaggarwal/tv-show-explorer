@@ -1,0 +1,22 @@
+<div class="row series">
+    <div class="col s12 m12 l12">
+        <div class="series-title">{{$ctrl.series.Title}}</div>
+        <div class="row">
+            <span class="col valign-wrapper series-rating">
+                <i class="valign material-icons">star</i>
+                <div class="valign">{{$ctrl.seasonRating}}</div>
+            </span>
+            <span class="col series-season">
+                {{$ctrl.seriesStartDate | date :'yyyy'}}
+            </span>
+            <span class="col series-total-season">
+                <ng-pluralize 
+                    count="$ctrl.series.totalSeasons"
+                    when="{ '0'     : 'Upcoming',
+                            'one'   : '1 Season',
+                            'other' : '{} Seasons'}">
+                </ng-pluralize>
+            </span>
+        </div>
+    </div>
+</div>

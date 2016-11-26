@@ -1,0 +1,6 @@
+# Node Specific #
+node_modules/
+npm-debug.log
+
+# Webpack Specific #
+static

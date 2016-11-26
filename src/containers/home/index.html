@@ -1,0 +1,28 @@
+<div class="home container">
+    <search-bar
+        placeholder="Search television show"
+        search="$ctrl.search"
+        on-search="$ctrl.onSearch(text)"
+    ></search-bar>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <series
+                series="$ctrl.series"
+                ng-if="$ctrl.series"
+            ></series>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l12 season-number">
+            Season {{$ctrl.series.Season}}
+        </div>
+    </div>
+    <div class="row" ng-if="$ctrl.series">
+        <episode
+            ng-repeat="episode in $ctrl.series.Episodes track by episode.imdbID"
+            episode-id="episode.imdbID"
+            on-hide="$ctrl.hideEpisode(id)"
+            ng-if="!$ctrl.isHidden(episode.imdbID)"
+        ></episode>
+    </div>
+</div>

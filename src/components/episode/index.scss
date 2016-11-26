@@ -1,0 +1,53 @@
+@import '../../../node_modules/materialize-css/sass/components/color';
+
+episode {
+    .card {
+        .card-image {
+            .card-title {
+                width: 100%;
+                padding: 10px;
+                font-size: 1.2rem;
+            }
+        }
+        .card-content {
+            height: 10rem;
+        }
+    }
+
+    .episode {
+
+        &.highly-rated {
+            .card {
+                box-shadow: 0 0px 1px 1px color("amber", "darken-1");
+            }
+
+            .episode-rating {
+                color: color("amber", "darken-1");
+            }
+        }
+
+        &-title {
+            width: 100%;
+        }
+
+        &-rating {
+            i {
+                font-size: 1rem;
+            }
+        }
+
+        &-rating,
+        &-runtime {
+            float: right;
+        }
+
+        &-hide {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #FFFFFF;
+            cursor: pointer;
+            padding: .6rem;
+        }
+    }
+}

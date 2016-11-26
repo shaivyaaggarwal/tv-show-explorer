@@ -1,0 +1,39 @@
+<div 
+    class="episode col s12 m6 l6"
+    ng-if="$ctrl.episode && !$ctrl.loading"
+    ng-class="{ 'highly-rated' : $ctrl.episode.isHighlyRated }"
+>
+    <div class="card hoverable">
+        <div class="card-image">
+            <img ng-src="{{$ctrl.episode.Poster}}">
+            <div class="card-title">
+                <div class="episode-number">
+                    <span>{{$ctrl.episode | episodeNumber}}</span>
+                    <span>|</span>
+                    <span>
+                        {{$ctrl.episode.releaseDate | date : 'MMMM,yy'}}
+                    </span>
+                    <div class="episode-rating">
+                            <i class="material-icons">star</i>
+                            {{$ctrl.episode.rating}}
+                    </div>
+                </div>
+                <div class="episode-title">
+                    {{$ctrl.episode.Title}}
+                    <span class="episode-runtime">
+                        {{$ctrl.episode.Runtime}}
+                    </span>
+                </div>
+            </div>
+            <div class="episode-hide">
+                <i class="material-icons" ng-click="$ctrl.hide()">delete</i>
+            </div>
+        </div>
+        <div class="card-content">
+            <p>{{$ctrl.episode.Plot}}</p>
+        </div>
+    </div>
+</div>
+<div class="progress" ng-if="$ctrl.loading">
+    <div class="indeterminate"></div>
+</div>

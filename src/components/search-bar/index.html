@@ -1,0 +1,17 @@
+<div class="row">
+	<form class="col s12" action="">
+		<div class="row">
+			<div class="input-field col s12">
+				<input
+					type="text"
+					ng-change="$ctrl.onChange()"
+					ng-model="$ctrl.searchText"
+					ng-model-options="{ debounce: 500 }"
+					name="searchInput"
+					id="searchInput"
+				/>
+				<label for="searchInput" ng-class="{'active' : $ctrl.searchText}">{{$ctrl.placeholder}}</label>
+			</div>
+		</div>
+	</form>
+</div>
